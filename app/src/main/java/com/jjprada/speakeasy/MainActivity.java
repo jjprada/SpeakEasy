@@ -15,6 +15,16 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Speaker thing = new Speaker() {
+            @Override
+            public String speak() {
+                return "I'm anonymous";
+            }
+        };
+
+        Speaker[] speakers = {new Human(), new Dog(), new Cat(), thing};
+        saySomething(speakers);
     }
 
     private void saySomething(Speaker[] speakers){
